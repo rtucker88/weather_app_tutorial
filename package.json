@@ -7,28 +7,23 @@
     "test-lint": "eslint --ignore-pattern \"build\" --ignore-path .gitignore .",
     "server": "cd server && node server.js",
     "client": " cd client && npm run start",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@glennsl/bs-json": "^2.0.0",
+    "bs-express": "^0.8.0",
+    "bs-node-fetch": "^0.1.2",
+    "bs-platform": "^3.1.5",
     "es6-promise": "^4.2.4",
     "express": "^4.16.3",
     "isomorphic-fetch": "^2.2.1",
     "node-fetch": "^2.1.2",
     "nodemon": "^1.17.4",
     "react-router-dom": "^4.2.2"
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^3.19.0",
-    "eslint-config-strongloop": "^2.1.0",
-    "eslint-plugin-react": "^7.8.2",
-    "module-alias": "2.0.6"
-  },
-  "_moduleAliases": {
-    "root": ".",
-    "routes": "./server/routes",
-    "server": "./server"
   }
 }
