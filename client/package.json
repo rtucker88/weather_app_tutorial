@@ -3,15 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@glennsl/bs-json": "^2.0.0",
+    "bs-fetch": "^0.3.0",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-router-dom": "^4.2.2",
+    "reason-react": "^0.4.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "test": "exit 0",
+    "webpack": "webpack -w",
+    "webpack:production": "NODE_ENV=production webpack"
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "http://localhost:5000/",
+  "devDependencies": {
+    "bs-platform": "^3.1.5",
+    "concurrently": "^3.5.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1"
+  }
 }
